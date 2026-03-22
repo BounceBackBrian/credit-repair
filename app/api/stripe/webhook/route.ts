@@ -1,3 +1,18 @@
+﻿import { NextResponse } from 'next/server';
+
+export async function GET() {
+  return NextResponse.json(
+    { status: 'stripe webhook route alive (GET)' },
+    { status: 200 }
+  );
+}
+
+export async function POST() {
+  return NextResponse.json(
+    { status: 'stripe webhook route alive (POST)' },
+    { status: 200 }
+  );
+}
 // app/api/stripe/webhook/route.ts
 
 import { NextRequest, NextResponse } from "next/server";

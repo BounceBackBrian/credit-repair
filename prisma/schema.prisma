@@ -1,0 +1,34 @@
+////////////////////////////////////////////////////////////
+// GENERATOR + DATASOURCE (REQUIRED)
+////////////////////////////////////////////////////////////
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+////////////////////////////////////////////////////////////
+// ANALYZER SESSION (CORE)
+////////////////////////////////////////////////////////////
+
+enum AnalyzerStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+model AnalyzerSession {
+  id           String         @id @default(uuid())
+  user_id      String
+  status       AnalyzerStatus
+  results_json Json?
+  created_at   DateTime       @default(now())
+  completed_at DateTime?
+
+  @@index([user_id, created_at])
+}

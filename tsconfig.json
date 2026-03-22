@@ -1,54 +1,22 @@
-{
+﻿{
   "compilerOptions": {
-    /* Language and Environment */
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2022",
+    "module": "CommonJS",
+    "lib": ["ES2022"],
+    "moduleResolution": "Node",
+    "outDir": "dist",
+    "rootDir": "src",
 
-    /* Module Resolution */
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-
-    /* React / Next */
-    "jsx": "react-jsx",
-    "plugins": [
-      { "name": "next" }
-    ],
-
-    /* Strictness */
     "strict": true,
-    "noEmit": true,
-    "isolatedModules": true,
+    "noImplicitAny": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "esModuleInterop": true,
     "skipLibCheck": true,
 
-    /* Interop */
-    "esModuleInterop": true,
-    "allowJs": true,
-
-    /* Performance */
-    "incremental": true,
-
-    /* Path Aliases (CRITICAL FIX) */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@/components/*": ["components/*"],
-      "@/lib/*": ["lib/*"],
-      "@/app/*": ["app/*"]
-    }
+    "resolveJsonModule": true,
+    "types": ["node"]
   },
-
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.mts",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
-  ],
-
-  "exclude": [
-    "node_modules",
-    "supabase/functions"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

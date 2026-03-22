@@ -1,45 +1,80 @@
 {
-  "name": "credit-repair",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-   "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "test": "start-server-and-test dev http://localhost:3000/api/health test:run",
-    "test:run": "vitest run",
-    "test:watch": "vitest"
-  },
-  "dependencies": {
-    "@prisma/client": "5.21.1",
-    "@supabase/ssr": "^0.8.0",
-    "@supabase/supabase-js": "^2.89.0",
-    "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
-    "framer-motion": "^12.24.0",
-    "lucide-react": "^0.562.0",
-    "next": "^16.1.1",
-    "openai": "^6.15.0",
-    "prisma": "5.21.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "stripe": "^20.1.0",
-    "uuid": "^13.0.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@types/uuid": "^10.0.0",
-    "autoprefixer": "^10.4.23",
-    "eslint": "^9",
-    "eslint-config-next": "15.0.3",
-    "postcss": "^8.5.6",
-    "start-server-and-test": "^2.1.3",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5",
-    "vitest": "^4.0.16"
-  }
+    "name": "credit-repair",
+    "version": "0.1.0",
+    "private": true,
+    "prisma": {
+        "schema": "prisma/schema.prisma"
+    },
+    "scripts": {
+        "test": "jest",
+        "build": "tsc",
+        "dev": "nodemon --exec ts-node src/app.ts",
+        "start": "node dist/app.js"
+    },
+    "dependencies": {
+        "@prisma/client": "5.21.1",
+        "@supabase/ssr": "^0.8.0",
+        "@supabase/supabase-js": "^2.89.0",
+        "clsx": "^2.1.1",
+        "date-fns": "^4.1.0",
+        "express": "^5.2.1",
+        "framer-motion": "^12.24.0",
+        "jsonwebtoken": "^9.0.3",
+        "jwks-rsa": "^3.2.1",
+        "lucide-react": "^0.562.0",
+        "next": "^16.1.1",
+        "openai": "^6.15.0",
+        "pg": "^8.17.1",
+        "postgres": "^3.4.8",
+        "prisma": "5.21.1",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "stripe": "^20.1.0",
+        "uuid": "^13.0.0",
+        "zod": "^4.3.5"
+    },
+    "devDependencies": {
+        "@jest/globals": "^30.2.0",
+        "@tailwindcss/postcss": "^4",
+        "@types/express": "^5.0.6",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/node": "^20.19.30",
+        "@types/pg": "^8.16.0",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "@types/supertest": "^6.0.3",
+        "@types/uuid": "^10.0.0",
+        "autoprefixer": "^10.4.23",
+        "eslint": "^9",
+        "eslint-config-next": "15.0.3",
+        "jest": "^30.2.0",
+        "nodemon": "^3.1.11",
+        "postcss": "^8.5.6",
+        "start-server-and-test": "^2.1.3",
+        "supertest": "^7.2.2",
+        "tailwindcss": "^4.1.18",
+        "ts-jest": "^29.4.6",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.16"
+    },
+    "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+    "main": "next.config.js",
+    "directories": {
+        "doc": "docs",
+        "lib": "lib",
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vnhyqph2cp-ctrl/credit-repair.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/vnhyqph2cp-ctrl/credit-repair/issues"
+    },
+    "homepage": "https://github.com/vnhyqph2cp-ctrl/credit-repair#readme"
 }
